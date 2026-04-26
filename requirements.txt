@@ -1,19 +1,25 @@
-# Core Scientific Stack
-numpy>=1.21.0
-pandas>=1.3.0
-scipy>=1.7.0
+# --- Núcleo numérico e tabular ---
+numpy>=1.26
+pandas>=2.2
+openpyxl>=3.1            # leitura de .xlsx (bases SINAN)
 
-# Machine Learning
-scikit-learn>=1.0.0
-xgboost>=1.5.0
-catboost>=1.0.0
-optuna>=2.10.0
-scikit-optimize>=0.9.0
+# --- Aprendizado de máquina ---
+scikit-learn>=1.6
+scikit-optimize>=0.10    # BayesSearchCV (Etapa 1)
+optuna>=3.6              # Refino profundo (Etapa 2)
+catboost>=1.2            # Algoritmo vencedor
+xgboost>=2.0             # Comparado na Etapa 1
 
-# Explainability
-shap>=0.40.0
+# --- Persistência e reprodutibilidade ---
+joblib>=1.4
 
-# Utilities
-joblib>=1.1.0
-matplotlib>=3.4.0
-IPython>=7.0.0
+# --- Explicabilidade ---
+shap>=0.45
+
+# --- Visualização ---
+matplotlib>=3.8
+
+# --- Ambiente de execução (notebooks) ---
+jupyterlab>=4.0
+ipykernel>=6.29
+ipywidgets>=8.1
