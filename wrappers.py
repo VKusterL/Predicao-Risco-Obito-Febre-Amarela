@@ -1,6 +1,6 @@
 """
 Recriação das classes auxiliares definidas no Notebook 2, necessárias para
-desserializar os arquivos .joblib salvos com FinalModelWithThreshold.
+desserializar os arquivos .joblib salvos com FinalModelWithThreshold
 """
 import numpy as np
 import pandas as pd
