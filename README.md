@@ -215,14 +215,7 @@ Como trabalhos futuros, recomenda-se validação externa multicêntrica, estudos
 ## Citação
 
 ```bibtex
-@inproceedings{lodi2026predicao,
-  title     = {Predição de Risco de Óbito por Febre Amarela em Diferentes Estágios do Acompanhamento Clínico usando Aprendizado de Máquina},
-  author    = {Lodi, Vinicius K. and Oliveira Junior, Cleber L. and Cerqueira, Fabio R. and Fracalossi, Karen O. and Costa, Glauce D. da and Fernandes, Daniel L.},
-  booktitle = {Anais do XXVI Simpósio Brasileiro de Computação Aplicada à Saúde (SBCAS)},
-  year      = {2026},
-  publisher = {Sociedade Brasileira de Computação (SBC)},
-  address   = {Porto Alegre, RS, Brasil}
-}
+TODO
 ```
 
 ## Agradecimentos
