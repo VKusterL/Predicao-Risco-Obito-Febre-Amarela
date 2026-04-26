@@ -31,7 +31,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 
-# Estilo limpo, alinhado ao paper (escala de cinza com acentos)
 mpl.rcParams.update({
     "figure.dpi": 110,
     "savefig.dpi": 200,
@@ -203,9 +202,7 @@ for tag, cfg in CONFIG.items():
     }
 
 
-# ============================================================
 # FIG 1 (combinado, painel 3x2 — reproduz a Figura 1 do paper)
-# ============================================================
 print("\nGerando figure1_combined.png ...")
 fig, axes = plt.subplots(3, 2, figsize=(11, 11),
                          gridspec_kw={"width_ratios": [1.0, 1.4]})
@@ -266,9 +263,7 @@ plt.close()
 print("OK")
 
 
-# ============================================================
 # Figuras individuais por modelo
-# ============================================================
 for tag in ["M1", "M2", "M3"]:
     R = results[tag]; cfg = R["cfg"]
     yte = R["yte"]; proba = R["proba"]; pred = R["pred"]; t = R["t"]; m = R["metrics"]
@@ -372,10 +367,7 @@ for tag in ["M1", "M2", "M3"]:
     plt.tight_layout()
     plt.savefig(f"{sub}/feature_importance.png"); plt.close()
 
-
-# ============================================================
 # SHAP individual e combinado
-# ============================================================
 print("\nCalculando SHAP para cada modelo...")
 shap_data = {}
 for tag in ["M1", "M2", "M3"]:
@@ -437,9 +429,7 @@ plt.savefig(f"{OUT}/figure2_shap_combined.png", dpi=200, bbox_inches="tight")
 plt.close()
 
 
-# ============================================================
 # COMPARAÇÃO DE ALGORITMOS (5 x 3 bases) usando os CSVs
-# ============================================================
 print("\nGerando algorithm_comparison.png ...")
 ranks = {
     "M1": pd.read_csv("./results/ranking_modelos_modelo1.csv"),
@@ -493,9 +483,7 @@ plt.tight_layout()
 plt.savefig(f"{OUT}/algorithm_comparison.png"); plt.close()
 
 
-# ============================================================
 # EVOLUÇÃO DO DESEMPENHO M1 -> M2 -> M3
-# ============================================================
 print("\nGerando performance_evolution.png ...")
 metric_to_plot = ["ROC-AUC", "PR-AUC", "Brier"]
 fig, axes = plt.subplots(1, 3, figsize=(13.5, 4.5))
@@ -524,9 +512,7 @@ plt.tight_layout()
 plt.savefig(f"{OUT}/performance_evolution.png"); plt.close()
 
 
-# ============================================================
 # RADAR de métricas operacionais
-# ============================================================
 print("\nGerando metrics_radar.png ...")
 metrics_radar = ["Sens", "Espec", "Prec", "VPN", "BalAcc", "F1"]
 metrics_label = ["Sensibilidade", "Especificidade", "Precisão",
@@ -554,9 +540,7 @@ plt.tight_layout()
 plt.savefig(f"{OUT}/metrics_radar.png"); plt.close()
 
 
-# ============================================================
 # HEATMAP de métricas (modelo x métrica)
-# ============================================================
 print("\nGerando metrics_heatmap.png ...")
 hm_metrics = ["ROC-AUC", "PR-AUC", "Brier", "Sens", "Espec", "Prec",
               "F1", "BalAcc", "VPN", "MCC", "Youden"]
@@ -580,9 +564,7 @@ plt.tight_layout()
 plt.savefig(f"{OUT}/metrics_heatmap.png"); plt.close()
 
 
-# ============================================================
 # Salvar tabela final com TODAS as métricas dos 3 modelos
-# ============================================================
 print("\nSalvando tabela holdout_metrics_full.csv ...")
 rows = []
 for tag in ["M1", "M2", "M3"]:
