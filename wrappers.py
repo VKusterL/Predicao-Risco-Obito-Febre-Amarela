@@ -135,7 +135,7 @@ class NominalPreprocessor(BaseEstimator):
         return self
 
     def transform(self, X):
-        # Suporta ambos os nomes (versões diferentes do código do usuário)
+        # Suporta ambos os nomes
         num_imp = getattr(self, "_num_imputer", None) or getattr(self, "_num_imp", None)
         cat_imp = getattr(self, "_cat_imputer", None) or getattr(self, "_cat_imp", None)
         if num_imp is None or cat_imp is None:
